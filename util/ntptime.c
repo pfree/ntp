@@ -311,8 +311,8 @@ main(
 		ts.l_uf &= ts_mask;
 		printf("  time %s, (.%0*d),\n",
 		       prettydate(&ts), fdigits, (int)time_frac);
-		printf("  maximum error %lu us, estimated error %lu us",
-		       (u_long)ntv.maxerror, (u_long)ntv.esterror);
+		printf("  maximum error %li us, estimated error %li us",
+		       ntv.maxerror, ntv.esterror);
 		if (rawtime)
 			printf("  ntptime=%x.%x unixtime=%x.%0*d %s",
 			       (u_int)ts.l_ui, (u_int)ts.l_uf,
@@ -344,8 +344,8 @@ main(
 		ftemp = (double)ntx.freq / SCALE_FREQ;
 		printf(" us, frequency %.3f ppm, interval %d s,\n",
 		     ftemp, 1 << ntx.shift);
-		printf("  maximum error %lu us, estimated error %lu us,\n",
-		     (u_long)ntx.maxerror, (u_long)ntx.esterror);
+		printf("  maximum error %li us, estimated error %li us,\n",
+		     ntx.maxerror, ntx.esterror);
 		printf("  status %s,\n", sprintb((u_int)ntx.status, TIMEX_STA_BITS));
 		ftemp = (double)ntx.tolerance / SCALE_FREQ;
 		gtemp = (double)ntx.precision;
